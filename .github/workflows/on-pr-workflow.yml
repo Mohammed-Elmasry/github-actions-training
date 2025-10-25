@@ -1,0 +1,10 @@
+name: on-pr-workflow.yml
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "We're running the tests cuz we need to ensure the quality of the main branch"

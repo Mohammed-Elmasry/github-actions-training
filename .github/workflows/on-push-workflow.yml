@@ -1,0 +1,12 @@
+name: on-push-workflow.yml
+on:
+  push:
+    branches:
+      - main
+      - master
+      - feature/*
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "we're running on a push to main, master (untestable), and feature branches"

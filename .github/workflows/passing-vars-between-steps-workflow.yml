@@ -1,0 +1,19 @@
+name: passing-vars-between-steps-workflow.yml
+on:
+  workflow_dispatch:
+
+jobs:
+  job-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: step-1
+        id: step-1-id
+        run: |
+          foo=bar
+          echo "foo=${foo}" >> $GITHUB_OUTPUT
+          echo "FOO=${foo}" >> $GITHUB_ENV
+      - name: step-2
+        id: step-2-id
+        run: |
+          echo "FOO (set via GITHUB_ENV is $FOO"
+          echo "foo (set via GITHUB_OUTPUT is ${{steps.step-1-id.outputs.foo}}"

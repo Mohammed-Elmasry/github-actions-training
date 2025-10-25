@@ -1,0 +1,17 @@
+name: env-workflow.yml
+on:
+  workflow_dispatch:
+env:
+  WORKFLOW_VAR: I_AM_WORKFLOW_LEVEL
+jobs:
+  job-1:
+    runs-on: ubuntu-24.04
+    env:
+      JOB_VAR: I_AM_JOB_LEVEL
+    steps:
+      - name: inspect scopes of the job 'say hello'
+        env:
+          STEP_VAR: I_AM_STEP_LEVEL
+        run: |
+          echo "workflow var: $WORKFLOW_VAR
+          echo "JOB_VAR: $JOB_VAR

@@ -1,0 +1,23 @@
+name: step-typess-workflow.yml
+on:
+  workflow_dispatch:
+
+jobs:
+  say-hello-inline-bash:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "Hello from an inline bash script in a Github actions workflow"
+        shell: bash // optional => default is bash anyway
+
+  say-hello-inline-python:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: print("Hello from a python script")
+        shell: python
+
+  say-hello-action:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: 'from an action in the Github Actions marketplace'

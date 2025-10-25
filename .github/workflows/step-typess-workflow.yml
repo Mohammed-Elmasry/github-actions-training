@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - run: echo "Hello from an inline bash script in a Github actions workflow"
-        shell: bash // optional => default is bash anyway
 
   say-hello-inline-python:
     runs-on: ubuntu-24.04

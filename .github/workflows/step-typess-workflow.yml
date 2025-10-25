@@ -4,7 +4,7 @@ on:
 
 jobs:
   say-hello-inline-bash:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - run: echo "Hello from an inline bash script in a Github actions workflow"
 
@@ -15,7 +15,7 @@ jobs:
         shell: python
 
   say-hello-action:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/hello-world-javascript-action@v1
         with:

@@ -15,5 +15,5 @@ jobs:
       - name: step-2
         id: step-2-id
         run: |
-          echo "FOO (set via GITHUB_ENV is $FOO"
-          echo "foo (set via GITHUB_OUTPUT is ${{steps.step-1-id.outputs.foo}}"
+          echo "FOO (set via GITHUB_ENV)    is $FOO"
+          echo "foo (set via GITHUB_OUTPUT) is ${{steps.step-1-id.outputs.foo}}"
